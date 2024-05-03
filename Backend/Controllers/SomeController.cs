@@ -18,21 +18,5 @@ namespace Backend.Controllers
             Console.WriteLine("Email enviado");
             return Ok();
         }
-
-        [HttpGet("sync")]
-        public async Task<IActionResult> GetAsync()
-        {
-            var taks1 = new Task( () =>
-            {
-
-                Thread.Sleep(1000);
-                Console.WriteLine("Conexion to database ok");
-
-            });
-
-            taks1.Start();
-
-            await taks1;
-        }
     }
 }
